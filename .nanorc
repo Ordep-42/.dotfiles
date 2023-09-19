@@ -1,8 +1,0 @@
-set linenumbers
-set tabsize 4
-set titlecolor blue,white
-set numbercolor blue,white
-set statuscolor white,blue
-set keycolor blue,white
-set softwrap
-set atblanks
