@@ -3,4 +3,9 @@
 sudo apt-get update
 sudo apt update
 sudo apt upgrade
-sudo apt install build-essential curl libffi-dev libffi8ubuntu1 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 -y -y -y -y -y -y -y -y -y
+
+ln -s ~/.dotfiles/.bashrc ~/.bashrc
+ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/.nanorc ~/.nanorc
+
+git clone https://github.com/tsouanas/lookbusy.git ~/lookbusy
