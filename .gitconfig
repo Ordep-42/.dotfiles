@@ -1,8 +1,31 @@
 [user]
     name = Ordep-42
     email = p.galvao@outlook.com.br
+
 [alias]
     last = log -1 HEAD
     part = add --patch
+	main = checkout main
+
 [init]
 	defaultBranch = main
+
+[color]
+	ui = auto
+
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = cyan
+
+[color "branch"]
+	local = green
+	current = green reverse
+	remote = yellow
+
+[color "diff"]
+	meta = yellow
+	frag = magenta
+	old = red bold
+	new = green bold
+	commit = yellow bold
