@@ -19,6 +19,6 @@ precmd() { vcs_info }
 
 zstyle ':vcs_info:git:*' formats '%b '
 
-PROMPT='%? %F{cyan}[%*]%f %F{green}%n%f@%F{green}%M%f:%F{blue}%~%f%% '
+PROMPT='%? %F{cyan}[%*]%f %F{010}%n%f@%F{010}%M%f:%F{012}%~%f%% '
 
 alias lookbusy=~/.lookbusy/lookbusy.py
