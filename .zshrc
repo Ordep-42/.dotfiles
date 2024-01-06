@@ -14,6 +14,7 @@ compinit
 
 alias ip='ip --color=auto'
 alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 alias ll='ls -AlF'
 
 PROMPT='%? %F{cyan}[%*]%f %F{green}%n%f@%F{green}%M%f:%F{012}%~%f%% '
