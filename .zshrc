@@ -12,13 +12,11 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+alias ip='ip --color=auto'
+alias ls='ls --color=auto'
 alias ll='ls -AlF'
 
-autoload -Uz vcs_info
-precmd() { vcs_info }
-
-zstyle ':vcs_info:git:*' formats '%b '
-
-PROMPT='%? %F{cyan}[%*]%f %F{green}%n@%M%f:%F{blue}%~%f%% '
+PROMPT='%? %F{cyan}[%*]%f %F{green}%n%f@%F{green}%M%f:%F{012}%~%f%% '
 
 alias lookbusy=~/.lookbusy/lookbusy.py
+export CLICOLOR=1
