@@ -12,12 +12,18 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Colored aliases
 alias ip='ip --color=auto'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias ll='ls -AlF'
 
-PROMPT='%? %F{cyan}[%*]%f %F{green}%n%f@%F{green}%M%f:%F{012}%~%f%% '
+# Ls and tree aliases
+alias ll='ls -AlhF'
+alias tree='tree -hFC'
+
+# Prompt
+PS1='%F{cyan}[%*]%f %F{green}%n%f@%F{green}%M%f:%F{012}%~%f%% '
+RPS1='%?'
 
 alias lookbusy=~/.lookbusy/lookbusy.py
 export CLICOLOR=1
