@@ -6,6 +6,7 @@
     last = log -1 HEAD
     part = add --patch
 	main = checkout main
+	stts = status
 
 [init]
 	defaultBranch = main
