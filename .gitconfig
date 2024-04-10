@@ -30,3 +30,6 @@
 	old = red bold
 	new = green bold
 	commit = yellow bold
+
+[pull]
+	rebase = false
