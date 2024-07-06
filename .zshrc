@@ -37,3 +37,4 @@ alias gitssh='eval $(ssh-agent -s); ssh-add ~/.ssh/githubauth'
 
 alias lookbusy=~/.lookbusy/lookbusy.py
 export CLICOLOR=1
+export VISUAL=nano
