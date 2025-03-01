@@ -14,6 +14,7 @@ bindkey -e
 zstyle :compinstall filename '/home/pedro/.zshrc'
 autoload -Uz compinit
 zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 compinit
 # End of lines added by compinstall
 
@@ -38,3 +39,5 @@ alias gitssh='eval $(ssh-agent -s); ssh-add ~/.ssh/githubauth'
 export CLICOLOR=1
 export VISUAL=nano
 export EDITOR=nano
+export XDG_CONFIG_HOME=$HOME/.config
+

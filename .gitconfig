@@ -1,5 +1,5 @@
 [user]
-    name = Ordep-42
+    name = Pedro Galvão
     email = 90785456+Ordep-42@users.noreply.github.com
 
 [alias]
@@ -31,5 +31,14 @@
 	new = green bold
 	commit = yellow bold
 
+[push]
+	autoSetupRemote = true
+
 [pull]
 	rebase = false
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
