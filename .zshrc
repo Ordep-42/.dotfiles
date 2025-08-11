@@ -1,5 +1,5 @@
 # Proompt and colors!
-PS1='%F{cyan}[%*]%f %F{red}[%f%F{yellow}%n%f%F{green}@%f%B%F{blue}%M%f%b %B%F{magenta}%~%f%b%F{red}]%f$ '
+PS1='%F{red}[%f%F{yellow}%n%f%F{green}@%f%B%F{blue}%M%f%b %B%F{magenta}%~%f%b%F{red}]%f$ '
 RPS1='%F{cyan}[%?]%f'
 autoload -U colors && colors
 
@@ -17,6 +17,13 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 compinit
 # End of lines added by compinstall
+
+# ENV_Variables
+export CLICOLOR=1
+export VISUAL=micro
+export EDITOR=micro
+export XDG_CONFIG_HOME=$HOME/.config
+export MICRO_TRUECOLOR=1
 
 # Verbose aliases
 alias cp='cp -iv'
@@ -36,8 +43,5 @@ alias tree='tree -hFC'
 # SSH Agent alias
 alias gitssh='eval $(ssh-agent -s); ssh-add ~/.ssh/githubauth'
 
-export CLICOLOR=1
-export VISUAL=nano
-export EDITOR=nano
-export XDG_CONFIG_HOME=$HOME/.config
-
+# Python venv alias
+alias venv-up='source venv/bin/activate'

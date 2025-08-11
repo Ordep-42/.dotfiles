@@ -1,0 +1,11 @@
+#!/bin/bash
+
+choice=$(printf " Power off\n Restart\n Suspend\n Lock" | rofi -dmenu -theme-str "@import 'power.rasi'")
+
+case "$choice" in
+	" Power off") poweroff ;;
+	" Restart") reboot ;;
+	" Suspend") systemctl suspend-then-hibernate ;;
+	" Lock") i3lock ;;
+	*) exit 1;;
+esac

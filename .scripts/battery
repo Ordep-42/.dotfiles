@@ -1,0 +1,44 @@
+#!/bin/bash
+BATTERY_LEVEL=$(acpi -b | grep -P -o '[0-9]+(?=%)')
+BATTERY_STATE=$(acpi | awk '{print $3}' | rev |  cut -c 2- | rev)
+threshold=15
+color=""
+icon=""
+
+EMPTY_FILE=/tmp/batteryempty
+
+if [[ ! $BATTERY_STATE == 'Discharging' ]] && [[ -f $EMPTY_FILE ]]; then
+	rm $EMPTY_FILE
+	dunstctl close 9991
+fi
+
+if [[ $BATTERY_STATE == 'Discharging' ]]; then
+	if [[ $BATTERY_LEVEL -le $threshold ]]; then
+		icon=" "
+		color="#FF5555"
+		if [[ ! -f $EMPTY_FILE ]]; then
+			notify-send -u critical "  Bateria baixa (${BATTERY_LEVEL}%)" "Conecte o carregador" -r 9991
+			touch $EMPTY_FILE
+		fi
+	elif [[ $BATTERY_LEVEL -le 25 ]]; then
+		icon=" "
+		color="#FFB86C"
+	elif [[ $BATTERY_LEVEL -le 50 ]]; then
+		icon=" "
+		color="#F1FA8C"
+	elif [[ $BATTERY_LEVEL -le 75 ]]; then
+		icon=" "
+		color="#50FA7B"
+	else
+		icon=" "
+		color="#FFFFFF"
+	fi
+elif [[ $BATTERY_STATE == 'Charging' ]]; then
+	icon=" "
+	color="#50FA7B"
+elif [[ $BATTERY_STATE == 'Full' ]]; then
+	icon=" "
+	color="#50FA7B"
+fi
+
+printf "%s %s%%\n%s \n%s\n" $icon $BATTERY_LEVEL $icon $color

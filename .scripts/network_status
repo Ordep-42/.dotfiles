@@ -1,0 +1,12 @@
+#!/bin/bash
+status=$(iwctl station wlan0 show | awk '/State/ {print $2}')
+network=$(iwctl station wlan0 show | awk '/Connected network/ {print $3}')
+signal=$(cat /proc/net/wireless | awk '/wlan0/ {print $3}' | rev | cut -c 2- | rev)
+
+signal=$((signal * 100 / 70))
+
+if [[ $status == disconnected ]]; then
+	printf "\n\n%s\n" "#FF5555"
+else
+	printf " $network (%s%%)\n\n%s\n" $signal  "#50FA7B"
+fi
