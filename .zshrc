@@ -32,9 +32,13 @@ alias rm='rm -vI'
 alias mkdir='mkdir -pv'
 
 # Colored aliases
-alias ip='ip --color=auto'
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
+alias ip='ip --color=always'
+alias ls='ls --color=always'
+alias grep='grep --color=always'
+alias less='less -R'
+alias pacman='pacman --color=always'
+alias tree='tree --color=always'
+alias diff='diff --color=always'
 
 # Ls and tree aliases
 alias ll='ls -AlhF'

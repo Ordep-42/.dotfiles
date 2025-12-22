@@ -1,6 +1,7 @@
 [user]
     name = Pedro Galvão
     email = 90785456+Ordep-42@users.noreply.github.com
+	signingkey = /home/pedro/.ssh/githubauth.pub
 
 [alias]
     last = log -1 HEAD
@@ -42,3 +43,6 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+
+[gpg]
+	format = ssh
