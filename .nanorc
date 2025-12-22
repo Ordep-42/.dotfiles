@@ -3,12 +3,12 @@ set linenumbers
 set softwrap
 set atblanks
 set stateflags
-set nohelp
+#set nohelp
 
 include "/usr/share/nano/*.nanorc"
 
-set titlecolor bold,white,cyan
-set promptcolor lightwhite,cyan
+set titlecolor bold,white,blue
+set promptcolor bold,white
 set statuscolor bold,green
 set errorcolor bold,white,red
 set spotlightcolor black,lightyellow
@@ -17,4 +17,4 @@ set stripecolor white,yellow
 set scrollercolor cyan
 set numbercolor bold,cyan
 set keycolor bold,cyan
-set functioncolor cyan
+set functioncolor bold,lightblue
