@@ -10,7 +10,7 @@
     follow = keyboard
 
     ### Geometry ###
-    width = (250,500)
+    width = (0,500)
     height = (0,450)
 
     # Position the notification in the top right corner
@@ -154,7 +154,8 @@
     # Paths to default icons.
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
-	icon_theme = Papirus
+	icon_theme = Dracula
+	enable_recursive_icon_lookup
 
     ### History ###
 
