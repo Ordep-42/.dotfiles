@@ -1,0 +1,12 @@
+#!/bin/bash
+
+CAL=~/.scripts/calendar
+
+case "$BLOCK_BUTTON" in
+	"1") $CAL curr & ;;
+	"4") $CAL prev & ;;
+	"5") $CAL next & ;;
+esac
+
+DATE=$(date '+%Y-%m-%d | %H:%M:%S')
+echo $DATE
