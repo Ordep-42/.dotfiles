@@ -1,0 +1,19 @@
+#!/bin/bash
+
+VOLUME=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{ print $5 }' | rev | cut -c 2-3 | rev)
+MUTE=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{ print $2 }')
+ICON=""
+
+if [[ $MUTE == 'no' ]]; then
+	if [[ $VOLUME -lt 5 ]]; then
+		ICON=" "
+	elif [[ $VOLUME -le 30 ]]; then
+		ICON=" "
+	else
+		ICON=" "
+	fi
+else 
+	ICON=" "
+fi
+
+printf "%s %s%%\n%s " $ICON $VOLUME $ICON

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+BRIGHTNESS=$(brightnessctl | awk 'NR==2 { print $4 }' | cut -c 2-4)
+
+echo $BRIGHTNESS
