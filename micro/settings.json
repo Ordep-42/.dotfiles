@@ -1,3 +1,6 @@
 {
-    "colorscheme": "dracula"
+    "colorscheme": "dracula",
+    "softwrap": true,
+    "lsp.server": "c=/home/pedro/.espressif/tools/esp-clang/esp-19.1.2_20250312/esp-clang/bin/clangd --background-index,cpp=/home/pedro/.espressif/tools/esp-clang/esp-19.1.2_20250312/esp-clang/bin/clangd --background-index",
+    "lsp.formatOnSave": true
 }
