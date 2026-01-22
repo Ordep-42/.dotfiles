@@ -49,3 +49,8 @@ include "gaps.conf"
 
 # clipboard
 exec 'greenclip daemon>/dev/null'
+
+# Audio
+exec --no-startup-id pipewire
+exec --no-startup-id pipewire-pulse
+exec --no-startup-id wireplumber
