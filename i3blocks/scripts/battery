@@ -2,7 +2,7 @@
 BATTERY_LEVEL=$(acpi -b | grep -P -o '[0-9]+(?=%)')
 BATTERY_STATE=$(acpi | awk '{print $3}' | rev |  cut -c 2- | rev)
 threshold=15
-color=""
+color="#FFFFFF"
 icon=""
 
 EMPTY_FILE=/tmp/batteryempty
@@ -20,25 +20,23 @@ if [[ $BATTERY_STATE == 'Discharging' ]]; then
 			notify-send -u critical "  Bateria baixa (${BATTERY_LEVEL}%)" "Conecte o carregador" -r 9991
 			touch $EMPTY_FILE
 		fi
-	elif [[ $BATTERY_LEVEL -le 25 ]]; then
+	elif [[ $BATTERY_LEVEL -le 30 ]]; then
 		icon=" "
 		color="#FFB86C"
-	elif [[ $BATTERY_LEVEL -le 50 ]]; then
+	elif [[ $BATTERY_LEVEL -le 60 ]]; then
 		icon=" "
-		color="#F1FA8C"
-	elif [[ $BATTERY_LEVEL -le 75 ]]; then
+		color="#FFB86C"
+	elif [[ $BATTERY_LEVEL -le 80 ]]; then
 		icon=" "
-		color="#50FA7B"
 	else
 		icon=" "
-		color="#FFFFFF"
 	fi
 elif [[ $BATTERY_STATE == 'Charging' ]]; then
 	icon=" "
 	color="#50FA7B"
 elif [[ $BATTERY_STATE == 'Full' ]]; then
-	icon=" "
+	icon=""
 	color="#50FA7B"
 fi
 
-printf "%s %s%%\n%s \n%s\n" $icon $BATTERY_LEVEL $icon $color
+printf "%s %s%%\n%s %s%%\n%s\n" $icon $BATTERY_LEVEL $icon $BATTERY_LEVEL $color

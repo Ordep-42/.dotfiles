@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ "$BLOCK_BUTTON" = "1" ]]; then
-	~/.scripts/wifi-menu &
+	scripts/wifi-menu &
 fi
 
 status=$(iwctl station wlan0 show | awk '/State/ {print $2}')

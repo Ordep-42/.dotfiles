@@ -2,14 +2,14 @@
 used_h=$(free -h | awk '/^Mem/ {print $3}')
 total_h=$(free -h | awk '/^Mem/ {print $2}')
 
-threshold=$(echo "0.85")
+threshold=$(echo "0.8")
 used_m=$(free -m | awk '/^Mem/ {print $3}')
 total_m=$(free -m | awk '/^Mem/ {print $2}')
 
 caution_mem=$(echo "($threshold - 0.1) * $total_m" | bc -l)
 warning_mem=$(echo "($threshold) * $total_m" | bc -l)
 
-printf '%s/%s\n\n' $used_h $total_h
+printf '%s\n%s\n' $used_h $used_h
 
 if (( $(echo "$used_m > $warning_mem" | bc -l) )); then
 	printf '#FF5555\n'

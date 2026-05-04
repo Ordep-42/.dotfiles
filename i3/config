@@ -37,7 +37,7 @@ exec_always --no-startup-id picom -f --config ~/.config/picom/picom.conf
 exec_always --no-startup-id feh --bg-fill --randomize ~/Imagens/wallpapers/*
 
 # Start network bar update script
-exec_always --no-startup-id ~/.scripts/network_update
+exec_always --no-startup-id ~/.config/i3blocks/scripts/network_update
 
 # Remove title bar
 default_border pixel 3
@@ -54,3 +54,4 @@ exec 'greenclip daemon>/dev/null'
 exec --no-startup-id pipewire
 exec --no-startup-id pipewire-pulse
 exec --no-startup-id wireplumber
+exec --no-startup-id systemctl --user restart pipewire pipewire-pulse wireplumber

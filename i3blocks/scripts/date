@@ -1,12 +1,14 @@
 #!/bin/bash
 
-CAL=~/.scripts/calendar
+CAL=~/.config/i3blocks/scripts/calendar
 
 case "$BLOCK_BUTTON" in
 	"1") $CAL curr & ;;
-	"4") $CAL prev & ;;
 	"5") $CAL next & ;;
+	"4") $CAL prev & ;;
 esac
 
 DATE=$(date '+%Y-%m-%d | %H:%M:%S')
+SHORT_DATE=$(date '%H:%M')
 echo $DATE
+echo $SHORT_DATE

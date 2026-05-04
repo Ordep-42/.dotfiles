@@ -1,6 +1,10 @@
 #!/bin/bash
 
-VOLUME=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{ print $5 }' | rev | cut -c 2-3 | rev)
+case "$BLOCK_BUTTON" in
+	"1") pavucontrol & ;;
+esac
+
+VOLUME=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{ print $5 }' | head -c -3)
 MUTE=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{ print $2 }')
 ICON=""
 
